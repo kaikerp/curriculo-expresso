@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/styles/main.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d8e00ce646.js" crossorigin="anonymous"></script>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <main>
+      <h1><%= title %></h1>
+      <p>Bem vindo(a) ao <strong><%= title %></strong></p>
+      <div class="portfolio">
+      <a title="Portfólio" id="port" href="http://www.behance.net/kaikerp" cursor:pointer><i class="fas fa-pencil-ruler"></i></a>
+      <a title="Portfólio" class="title-email-portfolio"id="port" href="http://www.behance.net/kaikerp" cursor:pointer>Portfólio</a>
+    </div>
+    <br>
+    <div class="email">
+      <a title="Email"  href="mailto:kaikerp@gmail.com" cursor:pointer><i class="fas fa-envelope"></i></a>
+        <a title="Email" class="title-email-portfolio" href="mailto:kaikerp@gmail.com">Email</a>
+    </div>
+
+      <h2><%= name %></h2>
+      <h3><%= profession %></h3>
+      <p><%= description %></p>
+      <br>
+      <p class="curriculo-titulo">Experiências</p>
+      <ul>
+      <% experience.map(experience => { %>
+          <li>
+              <div>
+                  <strong><%= experience.company %>:</strong>
+                  <strong><%= experience.office %></strong>
+                  <br>
+                  <span><%= experience.description %></span>
+              </div>
+          </li>
+      <% }); %>
+      </ul>
+      <p class="curriculo-titulo">Educação</p>
+      <ul>
+      <% education.map(education => { %>
+          <li>
+              <div>
+                  <strong><%= education.institution %></strong>
+                  <br>
+                  <span><%= education.description %></span>
+              </div>
+          </li>
+      <% }); %>
+      <br>
+      <% education2.map(education2 => { %>
+        <li>
+            <div>
+                <strong><%= education2.institution %></strong>
+                <br>
+                <span><%= education2.description %></span>
+            </div>
+        </li>
+    <% }); %>
+      </ul>
+      <p class="curriculo-titulo">Skills</p>
+      <ul>
+      <% skills.map(skill => { %>
+          <li><%= skill %></li>
+      <% }); %>
+      </ul>
+    </main>
+  </body>
+</html>
