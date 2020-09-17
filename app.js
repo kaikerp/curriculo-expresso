@@ -5,6 +5,7 @@ const createError = require('http-errors');
 
 const indexRoute = require('./routes/index');
 const curriculoRoute = require('./routes/curriculo');
+const contatoRoute = require('./routes/contato');
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', indexRoute);
 app.get('/curriculo', curriculoRoute);
+app.get('/contato', contatoRoute);
 
 // 404
 app.use((req, res, next) => {
